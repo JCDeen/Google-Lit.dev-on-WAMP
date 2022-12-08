@@ -1,0 +1,51 @@
+See this link for how this was done:<br />
+<a href="https://lit.dev/docs/v1/lit-html/getting-started/">
+https://lit.dev/docs/v1/lit-html/getting-started/
+</a>
+
+<script type="module">
+  // Gets the lit modules from CDN instead of npm installation
+  import {html, render} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+  // this is the former import statement:
+  //   import {html, render} from './node_modules/lit-html/lit-html.js';
+
+
+// Define a template
+const myTemplate = (myName) => html`<p style="color: blue;">Hello ${myName} you Big Blue Marble!</p>`;
+
+// Render the template to the document
+
+render(myTemplate('World'), document.body);
+</script>
+
+<hr>
+<p>
+So, to get this working, I had to:<br />
+
+<ol>
+<li>create _lit-test directory: <b>D:\MyWampLocation\www\_lit-test> </b>
+<li>cd to <b>D:\MyWampLocation\www\_lit-test> </b>
+<li>Run this cmd<br /><i>D:\MyWampLocation\www\_lit-test>npm i lit</i><br />
+<img src="screenshot.png">
+
+<li> Started with the code shown below, as suggested on the linked page. Then added the obvious HTML which gives us the narrative <i>(that your are reading)</i>:<br />
+<blockquote>
+  <pre>
+    <code>
+	// Import lit-html
+	import {html, render} from 'lit-html';
+
+	// Define a template
+	const myTemplate = (name) => html'&lt;p&gt;Hello ${name}&lt;/p&gt;';
+
+	// Render the template to the document
+	render(myTemplate('World'), document.body);
+    </code>
+  </pre>
+</blockquote></li>
+<li>Now, the small question I have is why do we see the results <span style="color: blue;"><i><b>below</b>, in blue</i></span> instead of <b>before</b> all of this narrative blurbage that comes <i>after</i> it ?
+
+<br /><br />Obviously, it is simply because it is rendered afterwards, but I intend to understand the mechanics behind that process &amp; once I do I will explain it fully, later. <br /><br />To Be Continued ...
+</ol>
+
+<hr >
